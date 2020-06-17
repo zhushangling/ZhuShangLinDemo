@@ -1,0 +1,43 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script type="text/javascript" src="../js/vue.js"></script>
+    </head>
+    <body>
+
+    <div id="app">
+        <!--遍历数组
+        key的作用帮助Vue 区分不同的元素，提高渲染性能，key取值可以是item.id，或是index（下标索引）-->
+        <ul>
+            <li :key="index" v-for="(item,index) in list">{{index}} - {{item}}</li>
+        </ul>
+
+        <!--遍历对象
+        key表示对象的属性，value表示属性的值，index表示索引-->
+        <ul>
+            <li v-for="(value,key,index) in object">{{index}} - {{key}} : {{value}}</li>
+        </ul>
+
+
+    </div>
+
+    <script type="text/javascript">
+        new Vue({
+            el: "#app",
+            data: {
+                list: [12, "zhu", "上林"],
+                object: {
+                    name : 'sunny',
+                    age : 12,
+                    sex : 1
+                }
+            },
+            methods: {}
+        });
+    </script>
+
+
+    </body>
+    </html>

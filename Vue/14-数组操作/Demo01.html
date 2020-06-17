@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+    <!--Vue数组操作
+    1、变异方法：会影响数组的原始数据的变化。
+        push, pop, shift, unshift, splice, sort, reverse
+    2、替换数组：不会影响原始的数组数据，而是形成一个新的数组。
+        slice（index1，index2）截取数组，左闭右开[ index1,index2 )
+            list: ['apple','orange','banana']
+            this.list = this.list.slice(0,2); //['apple','orange']
+        filter找到数组中符合条件的元素
+            books: [
+                {id: 1,name: '三国演义'},
+                {id: 2,name: '水浒传'},
+                {id: 3,name: '红楼梦'}
+                ]
+                toEdit: function(id){
+                  // 根据id查询出要编辑的数据，item指books数组中的每一项，返回的值book是一个数组，如果想要取其中的值，需要这样写：book[0].name
+                  var book = this.books.filter(function(item){
+                    return item.id == id;
+                  });
+                }
+         filter删除数组中符合条件的元素
+                this.books = this.books.filter(function(item){
+                  return item.id != id;
+                });
+
+
+     3、数组的其他方法：
+           Array.some(callback)
+                判断数组中有没有指定条件的元素，有返回true，没有返回false
+                some会遍历数组中的每个元素，让每个值都执行一遍callback函数
+
+                this.books.some((item) => { //箭头函数中的this指的就不是window对象了，而是指当前vue实例
+                  if(item.id == this.id) {
+                    item.name = this.name;
+                    // 完成更新操作之后，需要终止循环
+                    return true;
+                  }
+            Array.findIndex(callback)查找元素索引
+            Array.splice(index, num)根据索引删除元素
+                deleteBook: function(id){
+                  // 删除图书
+                  // 根据id从数组中查找元素的索引
+                  var index = this.books.findIndex(function(item){
+                    return item.id == id;
+                  });
+                  // 根据索引删除数组元素，第一个参数为要删除的索引起始位置，第二个参数是删除几个元素，
+                  this.books.splice(index, 1);
+                }
+    -->
+    <div id="app">
+        <div>
+            <span>
+               <input type="text" v-model='fname'>
+               <button @click='add'>添加</button>
+               <button @click='del'>删除</button>
+               <button @click='change'>替换</button>
+            </span>
+        </div>
+        <ul>
+            <li :key='index' v-for='(item,index) in list'>{{item}}</li>
+        </ul>
+    </div>
+
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                fname: '',
+                list: ['apple', 'orange', 'banana']
+            },
+            methods: {
+                add: function () {
+                    this.list.push(this.fname); //变异方法，直接修改原数组
+                },
+                del: function () {
+                    this.list.pop(); //变异方法，直接修改原数组
+                },
+                change: function () {
+                    this.list = this.list.slice(0, 2); //替换数组，不会影响原数组，所以需要重新赋值给原数组，slice是截取数组的方法
+                }
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>

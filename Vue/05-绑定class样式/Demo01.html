@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <style type="text/css">
+        .redColor{
+            color: red;
+        }
+        .greenBg{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+
+<!--  默认的class会被保留
+class和:class可以同时存在
+<p class="base" :class="classArr">Hello Vue</p>  -->
+    <div id="app">
+        <p :class="classArr">Hello Vue</p>
+        <button @click="handle">切换</button>
+    </div>
+
+    <script type="text/javascript">
+        /*第一种方式：对象语法*/
+        new Vue({
+            el: "#app",
+            data: {
+                classArr : {
+                    redColor:true,
+                    greenBg:true
+                }
+            },
+            methods : {
+                handle : function () {
+                    this.classArr.redColor = false; //redColor样式不添加
+                },
+            }
+        });
+
+        /*第二种方式：数组语法*/
+/*        new Vue({
+            el: "#app",
+            data: {
+                classArr : ["redColor","greenBg"] //注意：双引号
+            },
+            methods : {
+                handle : function () {
+                    this.classArr.splice(0,1); //删除数组中的第一个样式
+                },
+            }
+        });*/
+    </script>
+
+
+
+
+</body>
+</html>

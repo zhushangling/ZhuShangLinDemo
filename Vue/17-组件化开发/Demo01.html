@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+<!--
+ data变成一个函数
+    data是一个函数，会形成一个闭包的环境，这样才能保证，在组件重用的时候，每一份组件拥有一份独立的数据
+ 组件模版内容必须是单个根元素
+    template: ` //反引号
+      <div>
+        <button @click="handle">点击了{{count}}次</button>
+        <button>测试123</button>
+      </div>
+    `, //反引号
+组件命名方式
+    如果使用驼峰式命名组件，那么在使用组件的时候，只能在字符串模板中用驼峰的方式使用组件 44行，
+    但是在普通的标签模板中，必须使用短横线的方式使用组件 26行
+
+-->
+    <div id="app">
+        <hello-world></hello-world>
+        <button-counter></button-counter>
+    </div>
+
+    <script type="text/javascript">
+        Vue.component('HelloWorld', {
+            template: '<div>{{msg}}</div>',
+            data: function(){  //data变成一个函数
+                return {
+                    msg: 'HelloWorld'
+                }
+            }
+        });
+        Vue.component('button-counter', {
+            template: `
+                <div>
+                  <button @click="handle">点击了{{count}}次</button>
+                  <button>测试123</button>
+                  <HelloWorld></HelloWorld>
+                </div>
+              `,
+            data: function(){
+                return {
+                    count: 0
+                }
+            },
+            methods: {
+                handle: function(){
+                    this.count += 2;
+                }
+            }
+        })
+
+
+        var vm = new Vue({
+            el: '#app',
+            data:  {
+
+                }
+        });
+
+    </script>
+</body>
+
+</html>

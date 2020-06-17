@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        <form action="">
+            <div>用户名：<input type="text" v-model="username" @keyup.delete="handleClear"></div>
+            <div>密码：<input type="text" v-model="password" @keyup.enter="handleSubmit"></div>
+            <div><input type="button" value="提交" @click="handleSubmit"></div>
+            <span v-text="msg"></span>
+        </form>
+    </div>
+
+    <script type="text/javascript">
+        new Vue({
+            el: "#app",
+            data: {
+                username: "",
+                password: "",
+                msg: ""
+            },
+            methods: {
+                /*该方法点击"提交"按钮，和在密码框按回车都可以触发*/
+                handleSubmit: function () {
+                    //按键盘上的回车键触发该函数
+                    console.log(this.username, this.password)
+                    this.msg = "提交成功！"
+                },
+                handleClear: function () {
+                    //按键盘上的delete键，清空输入框，更多键盘修饰符，参考官方文档
+                    this.username = ""
+                }
+            }
+        });
+    </script>
+
+
+</body>
+</html>

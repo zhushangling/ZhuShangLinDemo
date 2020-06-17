@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <span>名：</span>
+            <input type="text" v-model='firstName'>
+        </div>
+        <div>
+            <span>姓：</span>
+            <input type="text" v-model='lastName'>
+        </div>
+        全名是：<div>{{fullName}}</div>
+    </div>
+
+    <script type="text/javascript">
+        /*侦听器*/
+       new Vue({
+            el: '#app',
+            data: {
+                firstName: 'Jim',
+                lastName: 'Green',
+                fullName: 'Jim Green'
+            },
+            watch: {
+                //侦听data中firstName的值，val表示最新的firstName的值
+                firstName: function (val) {
+                    this.fullName = val + ' ' + this.lastName;
+                },
+                //侦听data中lastName的值，val表示最新的lastName的值
+                lastName: function (val) {
+                    this.fullName = this.firstName + ' ' + val;
+                }
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>

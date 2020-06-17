@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+
+<!--1.先查看每个键盘的唯一标识：比如：a-65
+    @keyup="handle" 表示按任意键都会触发handle函数-->
+<!--    <div id="app">
+        <input type="text" @keyup="handle">
+    </div>
+
+    <script type="text/javascript">
+        new Vue({
+            el: "#app",
+            data: {},
+            methods: {
+                handle: function (event) {
+                    //浏览器控制台打印当前按钮的唯一标识
+                    console.log(event.keyCode)
+                },
+            }
+        });
+    </script>-->
+
+<!--2.自定义指定的键才能触发函数
+<input type="text" @keyup.65="handle">
+上面这样就可以当我们按a键的时候触发handle函数，但是不直观，所以可以这样，把65对应的a写出来：
+<input type="text" @keyup.a="handle"> -->
+    <div id="app">
+        <input type="text" @keyup.a="handle">
+    </div>
+
+    <script type="text/javascript">
+        Vue.config.keyCodes.a = 65 //左边的字母可以写任意值，但为了直观建议写右边数值对应的按键字母
+        new Vue({
+            el: "#app",
+            data: {
+
+            },
+            methods : {
+                handle : function (event) {
+                    //打印当前按钮的唯一标识
+                    console.log(event.keyCode)
+                },
+            }
+        });
+    </script>
+
+</body>
+</html>

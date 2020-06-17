@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <script type="text/javascript" src="../js/vue-router.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <router-link to="/user">User</router-link>
+        <!-- 路由填充位 -->
+        <router-view></router-view>
+
+    </div>
+
+    <script type="text/javascript">
+        const User = {
+            props: ['id'], //当路由配置规则中有props时，可以使用props接收路由参数
+            template: '<h1>User {{ id }}</h1>'
+        }
+
+        const router = new VueRouter({
+            // 配置所有的路由规则
+            routes: [
+                {path: '/', redirect: '/user' }, //路由重定向
+                /*动态路由参数 以冒号开头，props设置为true表示将动态路由参数id设置为动态属性，
+                对应的组件可以使用props接收路由参数*/
+                { path: '/user/:id', component: User, props: true },
+            ]
+        })
+
+        const vm = new Vue({
+            el: '#app',
+            data: {},
+            // 挂载路由实例对象
+            router
+        })
+    </script>
+</body>
+
+</html>

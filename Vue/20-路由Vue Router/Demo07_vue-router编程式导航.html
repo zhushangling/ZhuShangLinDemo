@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <script type="text/javascript" src="../js/vue-router.js"></script>
+</head>
+
+<body>
+<!--常用编程式导航API
+         this.$router.push('/register')  跳转到到指定路由
+            $router.push方法的参数规则：
+               1.字符串： $router.push('/register')
+               2.对象：$router.push({path: '/register'})
+               3.命名的路由（传递参数）：$router.push({name: '/register', params: {userId:123}})
+               4.带查询参数，变成 /register?uname=lisi
+               $router.push({paht: '/register', query: {userId:123}})
+
+         this.$router.go(n)   n为-1的话表示，后退
+-->
+    <div id="app">
+        <router-link to="/user">User</router-link>
+        <router-link to="/register">Register</router-link>
+
+        <!-- 路由填充位 -->
+        <router-view></router-view>
+
+
+    </div>
+
+    <script type="text/javascript">
+        const User = {
+            template: `
+                        <div>
+                            <button @click="goRegister">跳转到注册页面</button>
+                        </div>
+            `,
+            methods: {
+                goRegister: function () {
+                    //编程式导航，跳转到register页面
+                    this.$router.push('/register')
+                }
+            }
+        }
+
+        const Register = {
+            template: '<h1>Register 组件</h1>'
+        }
+
+        // 创建路由实例对象并配置路由规则
+        const router = new VueRouter({
+            // 配置所有的路由规则
+            routes: [
+                { path: '/user', component: User },
+                { path: '/register', component: Register }
+            ]
+        })
+
+        // 创建 vm 实例对象
+        const vm = new Vue({
+            el: '#app',
+            data: {},
+            // 挂载路由实例对象
+            router
+        })
+    </script>
+
+</body>
+
+</html>

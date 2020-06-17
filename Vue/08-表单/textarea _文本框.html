@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        <!-- textarea 是 一个双标签 不需要绑定value 属性的 -->
+        <textarea v-model='msg'></textarea>
+    </div>
+
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                msg:"你好！"
+            }
+        })
+    </script>
+
+</body>
+</html>

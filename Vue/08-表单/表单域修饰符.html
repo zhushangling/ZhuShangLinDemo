@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+    <!--.number 输入内容转换为数值类型
+        .trim   自动过滤用户输入的首尾空白字符
+        .lazy   将input事件切换成change事件-->
+    <div id="app">
+        <!-- 自动将用户的输入值转为数值类型 -->
+        <span>年龄：</span>
+        <input v-model.number="age" type="number"><br>
+
+        <!--自动过滤用户输入的首尾空白字符   -->
+        <span>用户名：</span>
+        <input v-model.trim="username"><br>
+
+        <!-- 在“change”时而非“input”时更新 -->
+        <span>密码：</span>
+        <input v-model.lazy="password">
+    </div>
+
+    <script type="text/javascript">
+        new Vue({
+            el: "#app",
+            data: {
+                age:"",
+                username:"",
+                password:""
+            },
+            methods : {
+                fun01:function (event) {
+                    console.log(this.age,this.username,this.password)
+                }
+            }
+        });
+    </script>
+
+
+
+
+</body>
+</html>

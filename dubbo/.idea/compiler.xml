@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="boot-user-service-provider" />
+        <module name="mall-interface" />
+        <module name="order-service-consumer" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="boot-order-service-consumer (1)" target="6" />
+      <module name="boot-order-service-consumer (2)" target="1.5" />
+      <module name="boot-order-service-provider" target="6" />
+      <module name="boot-user-service-provider" target="1.8" />
+      <module name="dubbo" target="1.8" />
+      <module name="mall-interface" target="1.8" />
+      <module name="order-service-consumer" target="1.8" />
+      <module name="user-service-provider" target="6" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="boot-order-service-provider" options="" />
+      <module name="boot-user-service-provider" options="-parameters" />
+      <module name="mall-interface" options="-parameters" />
+      <module name="order-service-consumer" options="-parameters" />
+    </option>
+  </component>
+</project>

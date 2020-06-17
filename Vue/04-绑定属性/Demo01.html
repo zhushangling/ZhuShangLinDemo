@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+
+<!--属性前面加冒号即可动态绑定属性-->
+    <div id="app">
+        <a :href="url" v-text="msg"></a>
+        <button @click="handle">切换url</button>
+    </div>
+
+    <script type="text/javascript">
+        Vue.config.keyCodes.a = 65
+        new Vue({
+            el: "#app",
+            data: {
+                msg : "百度",
+                url : "http://www.baidu.com"
+            },
+            methods : {
+                handle : function (event) {
+                    this.msg="传智播客"
+                    this.url="http://www.itcast.cn"
+                },
+            }
+        });
+    </script>
+
+
+
+
+</body>
+</html>

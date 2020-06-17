@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <base-layout>
+            <!--   会对应的将模版内容插入到指定slot名字的子模版的<slot name="header">标签中   -->
+            <p slot='header'>标题信息</p>
+            <!--   没有名字的模版内容会插入子模版的到默认的<slot>中   -->
+            <p>主要内容1</p>
+            <p>主要内容2</p>
+            <p slot='footer'>底部信息信息</p>
+        </base-layout>
+        <hr>
+        <base-layout>
+            <!--   默认slot属性只能加在一个标签上，如果多个标签的内容都需要插入到子模版中，
+            可以用<template slot="">标签包裹起来，template标签本身不会渲染到DOM中，
+            这里用它传递一下slot属性   -->
+            <template slot='header'>
+                <p>标题信息1</p>
+                <p>标题信息2</p>
+            </template>
+            <p>主要内容1</p>
+            <p>主要内容2</p>
+            <template slot='footer'>
+                <p>底部信息信息1</p>
+                <p>底部信息信息2</p>
+            </template>
+        </base-layout>
+    </div>
+
+    <script type="text/javascript">
+        Vue.component('base-layout', {
+            template: `
+              <div>
+                <header>
+                  <slot name='header'></slot>
+                </header>
+                <main>
+                  <slot></slot>
+                </main>
+                <footer>
+                  <slot name='footer'></slot>
+                </footer>
+              </div>
+            `
+        });
+        var vm = new Vue({
+            el: '#app',
+            data: {
+
+            }
+        });
+    </script>
+</body>
+
+</html>

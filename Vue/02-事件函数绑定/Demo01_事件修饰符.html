@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-text="num"></div>
+        <!--.stop - 阻止事件冒泡
+            .prevent - 阻止默认行为，比如a标签的跳转
+            .self - 只当事件在元素本身触发时才触发回调，冒泡上来的不触发回掉函数
+            .once - 只触发一次回调。
+            .left - (2.2.0版本之后) 只当点击鼠标左键时触发。
+            .right - (2.2.0) 只当点击鼠标右键时触发。
+            .middle - (2.2.0) 只当点击鼠标中键时触发。
+            如果不添加阻止冒泡修改符，当“点击1”按钮被点击的时候，handleClick0函数也会被冒泡触发，
+            添加.stop事件后，点击1按钮的时候只触发handleClick1函数-->
+        <div @click="handleClick0">
+            <button @click="handleClick1">未阻止事件冒泡</button>
+            <button @click.stop="handleClick1">阻止事件冒泡</button>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        new Vue({
+            el: "#app",
+            data: {
+                num: 0
+            },
+            methods: {
+                handleClick0: function (event) {
+                    this.num++;
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

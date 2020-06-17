@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        <!--对象语法-->
+        <p :style="objStyle">Hello Vue</p>
+        <!--数组语法(多个样式的集合)-->
+        <p :style="[objStyle,objStyle2]">Hello Vue02</p>
+        <button @click="handle">切换</button>
+    </div>
+
+    <script type="text/javascript">
+        new Vue({
+            el: "#app",
+            data: {
+                objStyle : {
+                    color:"red",
+                    fontSize:"50px"
+                },
+                objStyle2 : {
+                    backgroundColor : "green"
+                }
+            },
+            methods : {
+                handle : function () {
+                    this.objStyle.color = "black"; //修改样式
+                },
+            }
+        });
+    </script>
+
+
+
+
+</body>
+</html>

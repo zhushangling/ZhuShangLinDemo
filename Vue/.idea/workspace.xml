@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b614da33-015d-4171-8ec0-6d30a7e1c0ff" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/22-Vue.js项目实战开发/20-21vue电商/4.vue-项目实战day2/code/vue_shop/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22-Vue.js项目实战开发/20-21vue电商/4.vue-项目实战day2/code/vue_shop/.eslintrc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22-Vue.js项目实战开发/20-21vue电商/4.vue-项目实战day2/code/vue_shop/src/App.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22-Vue.js项目实战开发/20-21vue电商/4.vue-项目实战day2/code/vue_shop/src/assets/css/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/22-Vue.js项目实战开发/20-21vue电商/4.vue-项目实战day2/code/vue_shop/src/assets/css/global.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/22-Vue.js项目实战开发/20-21vue电商/4.vue-项目实战day2/code/vue_shop/src/components/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/22-Vue.js项目实战开发/20-21vue电商/4.vue-项目实战day2/code/vue_shop/src/components/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/22-Vue.js项目实战开发/20-21vue电商/4.vue-项目实战day2/code/vue_shop/src/components/Login.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22-Vue.js项目实战开发/20-21vue电商/4.vue-项目实战day2/code/vue_shop/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/22-Vue.js项目实战开发/20-21vue电商/4.vue-项目实战day2/code/vue_shop/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/22-Vue.js项目实战开发/20-21vue电商/4.vue-项目实战day2/code/vue_shop/src/plugins/element.js" beforeDir="false" afterPath="$PROJECT_DIR$/22-Vue.js项目实战开发/20-21vue电商/4.vue-项目实战day2/code/vue_shop/src/plugins/element.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/22-Vue.js项目实战开发/20-21vue电商/4.vue-项目实战day2/code/vue_shop/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/22-Vue.js项目实战开发/20-21vue电商/4.vue-项目实战day2/code/vue_shop/src/router.js" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/22-Vue.js项目实战开发/20-21vue电商/3.vue-项目实战day1/code/vue_shop" />
+  </component>
+  <component name="ProjectId" id="1cnd6iDKFBm4KEwPl5rveLYsCre" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/21-组件之间数据传递VueX" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\zhu\IdeaProjects\ZhuShangLinDemo\Vue\21-组件之间数据传递VueX" />
+      <recent name="C:\Users\zhu\IdeaProjects\ZhuShangLinDemo\Vue\20-路由Vue Router" />
+      <recent name="C:\Users\zhu\IdeaProjects\ZhuShangLinDemo\Vue\19-购物差案例" />
+      <recent name="C:\Users\zhu\IdeaProjects\ZhuShangLinDemo\Vue\18-插槽slot" />
+      <recent name="C:\Users\zhu\IdeaProjects\ZhuShangLinDemo\Vue\18-插槽" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b614da33-015d-4171-8ec0-6d30a7e1c0ff" name="Default Changelist" comment="" />
+      <created>1591168117079</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1591168117079</updated>
+      <workItem from="1591168118277" duration="5482000" />
+      <workItem from="1591233253808" duration="7983000" />
+      <workItem from="1591255502558" duration="8430000" />
+      <workItem from="1591318791332" duration="3575000" />
+      <workItem from="1591429801198" duration="613000" />
+      <workItem from="1591510144979" duration="28000" />
+      <workItem from="1591604579495" duration="11783000" />
+      <workItem from="1591665175130" duration="9121000" />
+      <workItem from="1591702729700" duration="841000" />
+      <workItem from="1591770592978" duration="21000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

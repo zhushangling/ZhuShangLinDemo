@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <script type="text/javascript" src="../js/vue-router.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <router-link to="/user">User</router-link>
+        <router-link to="/register">Register</router-link>
+
+        <!-- 路由填充位 -->
+        <router-view></router-view>
+
+    </div>
+
+    <script type="text/javascript">
+        const User = {
+            template: '<h1>User 组件</h1>'
+        }
+
+        /*嵌套路由在组件的template中添加路由链接：<router-link>和路由填充位：<router-view/>即可
+        * 路由配置规则中，在父路由中添加children属性，配置子路由。
+        * */
+        const Register = {
+            template: `
+                        <div>
+                            <h1>Register组件</h1>
+                            <hr>
+                            <router-link to="/register/tab1">Tab1</router-link>
+                            <router-link to="/register/tab2">Tab2</router-link>
+                            <router-view></router-view>
+                        </div>
+            `
+        }
+
+        const Tab1 = {
+            template:'<div>Tab1内容</div>>'
+        }
+        const Tab2 = {
+            template:'<div>Tab2内容</div>>'
+        }
+
+        // 创建路由实例对象并配置路由规则
+        const router = new VueRouter({
+            // 配置所有的路由规则
+            routes: [
+                { path: '/', redirect: '/user' }, //路由重定向
+                { path: '/user', component: User },
+                { path: '/register', component: Register,
+                    children:[
+                        {path:'/register/tab1',component:Tab1},
+                        {path:'/register/tab2',component:Tab2},
+                    ]
+                }
+            ]
+        })
+
+        // 创建 vm 实例对象
+        const vm = new Vue({
+            el: '#app',
+            data: {},
+            // 挂载路由实例对象
+            router
+        })
+    </script>
+</body>
+
+</html>

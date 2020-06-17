@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <script type="text/javascript" src="../js/vue-router.js"></script>
+</head>
+
+<body>
+<!--路由重定向指，用户在访问地址A的时候，强制跳转到地址B
+ 例如：{ path: '/', redirect: '/user' }  访问'/'时，强制跳转到'/user'
+-->
+    <div id="app">
+        <router-link to="/user">User</router-link>
+        <router-link to="/register">Register</router-link>
+
+        <!-- 路由填充位 -->
+        <router-view></router-view>
+    </div>
+
+    <script type="text/javascript">
+        const User = {
+            template: '<h1>User 组件</h1>'
+        }
+
+        const Register = {
+            template: '<h1>Register 组件</h1>'
+        }
+
+        // 创建路由实例对象并配置路由规则
+        const router = new VueRouter({
+            // 配置所有的路由规则
+            routes: [
+                { path: '/', redirect: '/user' }, //路由重定向
+                { path: '/user', component: User },
+                { path: '/register', component: Register }
+            ]
+        })
+
+        // 创建 vm 实例对象
+        const vm = new Vue({
+            el: '#app',
+            data: {},
+            // 挂载路由实例对象
+            router
+        })
+    </script>
+</body>
+
+</html>

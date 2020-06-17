@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+
+        <!--
+        1、 复选框需要同时通过v-model 双向绑定 一个值
+        2、 每一个复选框必须要有value属性 且value 值不能一样
+        3、 当某一个单选框选中的时候 v-model 会将当前的 value值 改变 data 中的 数据
+        hobby 的值就是选中的值，我们只需要实时监控他的值就可以了
+        -->
+        <div id="app">
+            <span>爱好：</span>
+            <input type="checkbox" id="ball" value="1" v-model='hobby'>
+            <label for="ball">篮球</label>
+            <input type="checkbox" id="sing" value="2" v-model='hobby'>
+            <label for="sing">唱歌</label>
+            <input type="checkbox" id="code" value="3" v-model='hobby'>
+            <label for="code">写代码</label>
+            <br>
+            <span>选择的是：{{hobby}}</span>
+        </div>
+        <script>
+            new Vue({
+                el : "#app",
+                data: {
+                    // 默认会让当前的 value 值为 2 和 3 的复选框选中
+                    hobby: ['2', '3'],
+                },
+            })
+        </script>
+
+
+
+
+
+</body>
+</html>

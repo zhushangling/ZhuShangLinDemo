@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+    <!--将data中数据的计算逻辑抽取出来，使模版更加简洁
+    计算属性和方法的区别：
+    计算属性有缓存，方法没有缓存机制。计算属性提升性能-->
+    <div id="app">
+        <div>{{msg}}</div>
+        <div>{{reverseString}}</div>
+    </div>
+
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: 'Hello Vue!'
+            },
+            /*基于data中的数据做计算，将msg反转*/
+            computed: {
+                reverseString: function(){
+                    return this.msg.split('').reverse().join('');
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

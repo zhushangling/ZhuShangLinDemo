@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div v-text="num"></div>
+        <!--直接绑定函数名称，不加()，默认会传递事件对象（就是这事件发生在那个DOM对象上）作为参数-->
+        <button @click="handleClick1">点击1</button>
+        <!--绑定函数调用，有()的，那个可以传多个参数，事件对象必须作为最后一个参数，并且事件对象的名称是固定的$event-->
+        <button @click="handleClick2(123,'hello',$event)">点击2</button>
+    </div>
+
+    <script type="text/javascript">
+        new Vue({
+            el: "#app",
+            data: {
+                num: 0
+            },
+            methods: {
+                handleClick1: function (event) {
+                    this.num++;
+                    console.log(event.target.innerHTML)
+                },
+                handleClick2: function (param1, param2, event) {
+                    this.num++;
+                    console.log(param1);
+                    console.log(param2);
+                    console.log(event.target.innerHTML)
+                },
+
+            }
+        });
+    </script>
+</body>
+
+</html>

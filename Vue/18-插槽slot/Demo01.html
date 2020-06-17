@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+<!--<slot>插槽用于父组件向子组件传递模版中的内容
+    如果父组件传递过来的模版中没有内容，则显示默认内容，如果有内容则覆盖默认内容-->
+    <div id="app">
+        <alert-box>有bug发生</alert-box>
+        <alert-box></alert-box>
+    </div>
+
+    <script type="text/javascript">
+        Vue.component('alert-box', {
+            template: `
+              <div>
+                <strong>ERROR:</strong>
+                <slot>默认内容</slot>
+              </div>
+            `
+        });
+        var vm = new Vue({
+            el: '#app',
+            data: {
+
+            }
+        });
+    </script>
+</body>
+
+</html>

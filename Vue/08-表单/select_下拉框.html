@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        <span>职业：</span>
+        <!--
+        1、 需要给select 通过v-model 双向绑定 一个值
+        2、 每一个option 必须要有value属性 且value 值不能一样
+        3、 当某一个option选中的时候 v-model 会将当前的 value值 改变 data 中的 数据
+        occupation 的值就是选中的值，我们只需要实时监控他的值就可以了
+        -->
+        <select v-model='selected'>
+            <option disabled value="">请选择</option>
+            <option value="1">教师</option>
+            <option value="2">软件工程师</option>
+            <option>律师</option>
+            <option>A</option>
+            <option>B</option>
+        </select>
+        <br>
+        <span>selected: {{selected}}</span>
+    </div>
+    <script>
+        new Vue({
+            el : "#app",
+            data: {
+                // 默认会让当前的 value=""下拉框选中
+                selected:'',
+            },
+        })
+    </script>
+
+
+
+
+</body>
+</html>
