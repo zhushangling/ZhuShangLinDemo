@@ -33,7 +33,7 @@ public class ShiroConfig {
          */
         Map<String,String> filterMap = new LinkedHashMap<String,String>();
 
-        filterMap.put("/testThymeleaf", "anon");//这个路径放行
+        filterMap.put("/index", "anon");//这个路径放行
         filterMap.put("/login", "anon");//这个路径放行
         filterMap.put("/*", "authc");//其他页面需要登录才能访问
 

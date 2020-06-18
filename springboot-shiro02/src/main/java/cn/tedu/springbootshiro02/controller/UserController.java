@@ -23,12 +23,12 @@ public class UserController {
     /**
      * 测试thymeleaf
      */
-    @RequestMapping("/testThymeleaf")
-    public String testThymeleaf(Model model){
+    @RequestMapping("/index")
+    public String index(Model model){
         //把数据存入model
-        model.addAttribute("name", "黑马程序员");
-        //跳转到src/main/resource/templates目录下的test.html
-        return "test";
+        model.addAttribute("name", "首页");
+        //跳转到src/main/resource/templates目录下的index.html
+        return "index";
     }
 
     /**
@@ -56,7 +56,7 @@ public class UserController {
         try {
             subject.login(token);
             //登录成功
-            return "redirect:/testThymeleaf";//重定向到请求/testThymeleaf
+            return "redirect:/index";//重定向到请求/index
         } catch (UnknownAccountException e) {
             //e.printStackTrace();
             //登录失败:用户名不存在
@@ -69,7 +69,5 @@ public class UserController {
             return "login";//转发跳转到src/main/resource/templates目录下的login.html
         }
     }
-
-
 
 }
