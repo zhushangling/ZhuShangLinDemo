@@ -41,10 +41,8 @@ public class ShiroConfig {
         shiroFilterFactoryBean.setLoginUrl("/toLogin");
 
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterMap);
-
         return shiroFilterFactoryBean;
     }
-
     /**
      * 创建DefaultWebSecurityManager
      */
@@ -55,7 +53,6 @@ public class ShiroConfig {
         securityManager.setRealm(userRealm);
         return securityManager;
     }
-
     /**
      * 创建Realm
      */
@@ -63,6 +60,5 @@ public class ShiroConfig {
     public UserRealm getRealm(){
         return new UserRealm();
     }
-
 
 }

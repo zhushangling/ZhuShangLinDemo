@@ -7,6 +7,9 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/Dubbo/pom.xml" />
+        <option value="$PROJECT_DIR$/shiroStudy/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-shiro/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-shiro02/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
@@ -15,4 +18,5 @@
       </set>
     </option>
   </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_12" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
 </project>

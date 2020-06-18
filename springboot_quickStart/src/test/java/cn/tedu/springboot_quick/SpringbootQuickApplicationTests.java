@@ -14,7 +14,7 @@ class SpringbootQuickApplicationTests {
     UserMapper userMapper;
 
     @Test
-    public void testQueryUser(){
+    public void testQueryUser() {
         List<User> users = userMapper.queryUserList();
         System.out.println(users);
     }

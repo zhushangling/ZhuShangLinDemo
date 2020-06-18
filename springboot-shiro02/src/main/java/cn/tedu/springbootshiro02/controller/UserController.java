@@ -8,18 +8,9 @@ import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class UserController {
-
-    @RequestMapping("/hello")
-    @ResponseBody
-    public String hello(){
-        System.out.println("UserController.hello()");
-        return "ok";
-    }
-
     /**
      * 测试thymeleaf
      */
@@ -39,7 +30,6 @@ public class UserController {
         return "login";
     }
 
-
     /**
      * 登录逻辑处理
      */
@@ -57,14 +47,10 @@ public class UserController {
             subject.login(token);
             //登录成功
             return "redirect:/index";//重定向到请求/index
-        } catch (UnknownAccountException e) {
-            //e.printStackTrace();
-            //登录失败:用户名不存在
+        } catch (UnknownAccountException e) {//登录失败:用户名不存在
             model.addAttribute("msg", "用户名不存在");
             return "login";//转发跳转到src/main/resource/templates目录下的login.html
-        }catch (IncorrectCredentialsException e) {
-            //e.printStackTrace();
-            //登录失败:密码错误
+        }catch (IncorrectCredentialsException e) {//登录失败:密码错误
             model.addAttribute("msg", "密码错误");
             return "login";//转发跳转到src/main/resource/templates目录下的login.html
         }

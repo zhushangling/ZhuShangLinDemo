@@ -16,7 +16,7 @@ public class UserController {
 
     @RequestMapping("/queryUser")
     @ResponseBody
-    public List<User> queryUser(){
+    public List<User> queryUser() {
         List<User> users = userMapper.queryUserList();
         return users;
     }
