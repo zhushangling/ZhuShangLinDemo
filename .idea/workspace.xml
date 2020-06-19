@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="255255c4-3100-4459-a8dc-c0cf25b311d3" name="Default Changelist" comment="删除，使用springboot-shiro02">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="255255c4-3100-4459-a8dc-c0cf25b311d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot-shiro02/src/main/java/cn/tedu/springbootshiro02/shiro/ShiroConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot-shiro02/src/main/java/cn/tedu/springbootshiro02/shiro/ShiroConfig.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -259,7 +257,8 @@
       <workItem from="1592452686865" duration="1571000" />
       <workItem from="1592461081106" duration="7479000" />
       <workItem from="1592479591421" duration="11166000" />
-      <workItem from="1592529768745" duration="12700000" />
+      <workItem from="1592529768745" duration="13015000" />
+      <workItem from="1592549329535" duration="101000" />
     </task>
     <task id="LOCAL-00001" summary="shiro初步实现认证">
       <created>1592489952750</created>
@@ -296,7 +295,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592547371721</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="删除，使用springboot-shiro02">
+      <created>1592547917176</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1592547917176</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,6 +327,7 @@
     <MESSAGE value="shiro实现认证修改" />
     <MESSAGE value="shiro完成登录认证和授权以及拥有对应权限才能看到对应内容" />
     <MESSAGE value="修改注释" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改注释" />
+    <MESSAGE value="删除，使用springboot-shiro02" />
+    <option name="LAST_COMMIT_MESSAGE" value="删除，使用springboot-shiro02" />
   </component>
 </project>
