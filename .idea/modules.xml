@@ -6,7 +6,6 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/ZhuShangLinDemo.iml" filepath="$PROJECT_DIR$/.idea/ZhuShangLinDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/dubbo/mall-interface/mall-interface.iml" filepath="$PROJECT_DIR$/dubbo/mall-interface/mall-interface.iml" />
       <module fileurl="file://$PROJECT_DIR$/dubbo/order-service-consumer/order-service-consumer.iml" filepath="$PROJECT_DIR$/dubbo/order-service-consumer/order-service-consumer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/springboot-shiro/springboot-shiro.iml" filepath="$PROJECT_DIR$/springboot-shiro/springboot-shiro.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-shiro02/springboot-shiro02.iml" filepath="$PROJECT_DIR$/springboot-shiro02/springboot-shiro02.iml" />
     </modules>
   </component>
