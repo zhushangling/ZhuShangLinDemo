@@ -11,23 +11,32 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class UserController {
+
     /**
-     * 测试thymeleaf
+     * 根据不同的url跳转到templates目录下对应的html页面，
+     * 并将model添加的数据带过去，可以在html页面中使用th:text="${name}"属性接收
      */
     @RequestMapping("/index")
     public String index(Model model){
-        //把数据存入model
+        //把数据存入model，供html页面使用
         model.addAttribute("name", "首页");
-        //跳转到src/main/resource/templates目录下的index.html
         return "index";
     }
-
-    /**
-     * 跳转到登录页面请求
-     */
     @RequestMapping("/toLogin")
     public String toLogin(Model model){
         return "login";
+    }
+    @RequestMapping("/unAuth")
+    public String unAuth(Model model){
+        return "unAuth";
+    }
+    @RequestMapping("/add")
+    public String add(Model model){
+        return "/user/add";
+    }
+    @RequestMapping("/update")
+    public String update(Model model){
+        return "/user/update";
     }
 
     /**
@@ -44,15 +53,15 @@ public class UserController {
         UsernamePasswordToken token = new UsernamePasswordToken(name,password);
         //3.执行登录方法
         try {
-            subject.login(token);
+            subject.login(token);//将token传给UserRealm类作为doGetAuthenticationInfo方法的参数进行登录验证
             //登录成功
-            return "redirect:/index";//重定向到请求/index
+            return "redirect:/index";//重定向到controller请求/index地址
         } catch (UnknownAccountException e) {//登录失败:用户名不存在
             model.addAttribute("msg", "用户名不存在");
-            return "login";//转发跳转到src/main/resource/templates目录下的login.html
+            return "login";
         }catch (IncorrectCredentialsException e) {//登录失败:密码错误
             model.addAttribute("msg", "密码错误");
-            return "login";//转发跳转到src/main/resource/templates目录下的login.html
+            return "login";
         }
     }
 

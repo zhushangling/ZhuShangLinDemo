@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:shiro="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>测试Thymeleaf的使用</title>
@@ -7,6 +7,16 @@
 <body>
 <!--name值来自转发到该页面的时候model中存的值： model.addAttribute("name", "黑马程序员");-->
 <h3 th:text="${name}"></h3>
+
+<hr/>
+<div shiro:hasPermission="add">  <!--表示有添加权限才能看到该div包含的页面内容-->
+    <!--href表示重定向请求到controller中的@RequestMapping("/add")  -->
+    进入用户添加功能： <a href="add">用户添加</a><br/>
+</div>
+<div shiro:hasPermission="update">  <!--表示有更新权限才能看到该div包含的页面内容-->
+    进入用户更新功能： <a href="update">用户更新</a><br/>
+</div>
+<a href="toLogin">登录</a>
 
 </body>
 </html>
