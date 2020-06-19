@@ -24,10 +24,13 @@ public class UserRealm extends AuthorizingRealm {
         //给当前登录用户 资源授权，授权字符串要跟filterMap.put("/add", "perms[add]");中[]字符串一致
         SimpleAuthorizationInfo sai = new SimpleAuthorizationInfo();
 
-//        到数据库查询当前用户的授权字符串，对应授权
+//      获取到当前登录用户 subject
         Subject subject = SecurityUtils.getSubject();
-        User user = (User) subject.getPrincipal();//这个principal就是下面登录认证逻辑中return new SimpleAuthenticationInfo(user,user.getPassword(),"");第一个参数user
+//这个principal就是下面登录认证逻辑中return new SimpleAuthenticationInfo(user,user.getPassword(),"");第一个参数user
+        User user = (User) subject.getPrincipal();
+//      根据用户名查询数据库
         User dbUser = userService.findByName(user.getName());
+//      根据数据库查询到的权限信息，赋予该用户权限
         sai.addStringPermission(dbUser.getPerms());
         return sai;
     }
